@@ -1,0 +1,23 @@
+{
+    "name": "grunt-slack-hook",
+    "version": "1.0.0",
+    "description": "Grunt task that can push messages to slack.com using web hooks",
+    "keywords": [],
+    "author": {
+        "name": "Piotr Walczyszyn",
+        "email": "piotr@outof.me",
+        "url": "http://outof.me/"
+    },
+    "homepage": "https://github.com/pwalczyszyn/grunt-slack-hook",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pwalczyszyn/grunt-slack-hook"
+    },
+    "dependencies": {
+        "superagent": "~0.15.7"
+    },
+    "devDependencies": {},
+    "bundleDependencies": [],
+    "private": true,
+    "main": "Gruntfile.js"
+}
