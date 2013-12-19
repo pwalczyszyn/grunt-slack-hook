@@ -17,10 +17,10 @@ module.exports = function (grunt) {
             data.username = options.username;
         }
 
-        if (options.iconType === 'emoji') {
-            data.icon_emoji = options.iconValue;
-        } else if (options.iconType === 'url') {
-            data.icon_url = options.iconValue;
+        if (options.icon_emoji) {
+            data.icon_emoji = options.icon_emoji;
+        } else if (options.icon_url) {
+            data.icon_url = options.icon_url;
         }
 
         request
