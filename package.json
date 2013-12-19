@@ -13,8 +13,6 @@
         "superagent": "~0.15.7"
     },
     "devDependencies": {},
-    "bundleDependencies": [],
-    "private": true,
     "main": "Gruntfile.js",
     "bugs": {
         "url": "https://github.com/pwalczyszyn/grunt-slack-hook/issues"
