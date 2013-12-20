@@ -1,6 +1,6 @@
 # grunt-slack-hook
 
-> Grunt plugin that can push messages to [slack](slack.com) service using web hooks.
+> Grunt plugin that can push messages to [slack](http://slack.com/) service using web hooks.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.2`
