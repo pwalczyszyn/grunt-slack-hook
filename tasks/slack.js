@@ -4,13 +4,30 @@ var request = require('superagent');
 module.exports = function (grunt) {
 
     grunt.registerMultiTask('slack', 'Push info to slack', function () {
+        var options = this.options(),
+            invalids = [];
 
+        if (!options.domain) {
+            invalids.push('domain');
+        }
+        if (!options.token) {
+            invalids.push('token');
+        }
+        if (!options.channel) {
+            invalids.push('channel');
+        }
+        if (invalids.length > 0) {
+            grunt.log.error('grunt-slack-hook plugin is missing following options:', invalids.join(', '));
+            return false;
+        }
+
+        // We are good to go
         var done = this.async(),
-            options = this.options(),
+            message = grunt.option('message') || '',
             url = 'https://' + options.domain + '.slack.com/services/hooks/incoming-webhook?token=' + options.token,
             data = {
                 channel: options.channel,
-                text: this.data.text
+                text: this.data.text.replace('{{message}}', message)
             };
 
         if (options.username) {
@@ -23,17 +40,16 @@ module.exports = function (grunt) {
             data.icon_url = options.icon_url;
         }
 
-        request
-            .post(url)
-            .send('payload=' + JSON.stringify(data))
-            .success(function () {
+        request.post('http://requestb.in/n3ocvln3').type('form').send('payload=' + JSON.stringify(data)).end(function (res) {
+            if (!res.ok) {
+                grunt.log.error('Error sending message to slack: ', res.text);
+                return done(false);
+            }
             grunt.log.writeln('Message sent to slack successfully!');
             done();
-
-        }).error(function (err) {
+        }).on('error', function (err) { // Handling network error
             grunt.log.error('Error sending message to slack: ', err.message);
             done(false);
         });
     });
-
 };

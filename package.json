@@ -1,24 +1,48 @@
 {
     "name": "grunt-slack-hook",
-    "version": "0.0.2",
-    "description": "Grunt task that can push messages to slack.com using web hooks",
-    "keywords": [],
-    "author": "Piotr Walczyszyn <piotr@outof.me> (http://outof.me/)",
+    "description": "Grunt plugin that can push messages to slack.com service using web hooks.",
+    "version": "0.0.3",
     "homepage": "https://github.com/pwalczyszyn/grunt-slack-hook",
+    "author": {
+        "name": "Piotr Walczyszyn",
+        "email": "piotr@outof.me",
+        "url": "http://outof.me"
+    },
     "repository": {
         "type": "git",
-        "url": "https://github.com/pwalczyszyn/grunt-slack-hook"
+        "url": "https://github.com/pwalczyszyn/grunt-slack-hook.git"
+    },
+    "bugs": {
+        "url": "https://github.com/pwalczyszyn/grunt-slack-hook/issues"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/pwalczyszyn/grunt-slack-hook/blob/master/LICENSE-MIT"
+    }
+    ],
+    "main": "Gruntfile.js",
+    "engines": {
+        "node": ">= 0.8.0"
+    },
+    "scripts": {
+        "test": "grunt test"
     },
     "dependencies": {
         "superagent": "~0.15.7"
     },
-    "devDependencies": {},
-    "main": "Gruntfile.js",
-    "bugs": {
-        "url": "https://github.com/pwalczyszyn/grunt-slack-hook/issues"
+    "devDependencies": {
+        "grunt-contrib-jshint": "~0.6.0",
+        "grunt-contrib-clean": "~0.4.0",
+        "grunt-contrib-nodeunit": "~0.2.0",
+        "grunt": "~0.4.2"
     },
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+    "peerDependencies": {
+        "grunt": "~0.4.2"
     },
-    "license": "MIT"
+    "keywords": [
+    "slack",
+    "grunt",
+    "web hook"
+    ]
 }
