@@ -40,7 +40,7 @@ module.exports = function (grunt) {
             data.icon_url = options.icon_url;
         }
 
-        request.post('http://requestb.in/n3ocvln3').type('form').send('payload=' + JSON.stringify(data)).end(function (res) {
+        request.post(url).type('form').send('payload=' + JSON.stringify(data)).end(function (res) {
             if (!res.ok) {
                 grunt.log.error('Error sending message to slack: ', res.text);
                 return done(false);
