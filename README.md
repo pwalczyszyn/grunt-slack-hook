@@ -28,8 +28,8 @@ grunt.initConfig({
     options: {
         token: 'slack token', // get one from here: https://typekit.slack.com/services
         domain: 'domain', // https://domain.slack.com
-        channel: '@slackbot',
-        username: 'webhookbot',
+        channel: 'general', // specify channel without the hash
+        username: 'webhookbot', // name of the Slack bot
         icon_emoji: ':ghost:',
         icon_url: 'https://slack.com/img/icons/app-57.png' // if icon_emoji not specified
     },
