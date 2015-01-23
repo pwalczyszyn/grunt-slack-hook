@@ -26,8 +26,7 @@ In your project's Gruntfile, add a section named `plugin` to the data object pas
 grunt.initConfig({
   slack: {
     options: {
-        token: 'slack token', // get one from here: https://typekit.slack.com/services
-        domain: 'domain', // https://domain.slack.com
+        webhook: 'https://hooks.slack.com/...', // Add a new Service Incoming WebHooks, copy the Webhook URL
         channel: '@slackbot',
         username: 'webhookbot',
         icon_emoji: ':ghost:',
