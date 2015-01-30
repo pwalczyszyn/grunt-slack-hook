@@ -1,6 +1,8 @@
-# grunt-slack-hook
+# grunt-slack-webhook
 
 > Grunt plugin that can push messages to [slack](http://slack.com/) service using web hooks.
+
+__Note:__ This is a fork of the original [grunt-slack-hook](https://github.com/pwalczyszyn/grunt-slack-hook) by pwalczyszyn. It's working with the current version of Slack that uses webhook-urls instead of access tokens.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.2`
@@ -8,13 +10,13 @@ This plugin requires Grunt `~0.4.2`
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
-npm install grunt-slack-hook --save-dev
+npm install grunt-slack-webhook --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-slack-hook');
+grunt.loadNpmTasks('grunt-slack-webhook');
 ```
 
 ## The "plugin" task
@@ -26,8 +28,7 @@ In your project's Gruntfile, add a section named `plugin` to the data object pas
 grunt.initConfig({
   slack: {
     options: {
-        token: 'slack token', // get one from here: https://typekit.slack.com/services
-        domain: 'domain', // https://domain.slack.com
+        webhook: 'https://hooks.slack.com/...', // Add a new Service Incoming WebHooks, copy the Webhook URL
         channel: '@slackbot',
         username: 'webhookbot',
         icon_emoji: ':ghost:',

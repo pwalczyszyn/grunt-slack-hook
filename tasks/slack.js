@@ -7,11 +7,8 @@ module.exports = function (grunt) {
         var options = this.options(),
             invalids = [];
 
-        if (!options.domain) {
-            invalids.push('domain');
-        }
-        if (!options.token) {
-            invalids.push('token');
+        if (!options.webhook) {
+            invalids.push('webhook');
         }
         if (!options.channel) {
             invalids.push('channel');
@@ -24,7 +21,7 @@ module.exports = function (grunt) {
         // We are good to go
         var done = this.async(),
             message = grunt.option('message') || '',
-            url = 'https://' + options.domain + '.slack.com/services/hooks/incoming-webhook?token=' + options.token,
+            url = options.webhook,
             data = {
                 channel: options.channel,
                 text: this.data.text.replace('{{message}}', message)

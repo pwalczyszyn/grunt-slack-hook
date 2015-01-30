@@ -1,24 +1,24 @@
 {
-    "name": "grunt-slack-hook",
+    "name": "grunt-slack-webhook",
     "description": "Grunt plugin that can push messages to slack.com service using web hooks.",
-    "version": "0.0.3",
-    "homepage": "https://github.com/pwalczyszyn/grunt-slack-hook",
+    "version": "0.0.4",
+    "homepage": "https://github.com/kriskbx/grunt-slack-webhook",
     "author": {
-        "name": "Piotr Walczyszyn",
-        "email": "piotr@outof.me",
-        "url": "http://outof.me"
+        "name": "Kris Siepert",
+        "email": "m@kris cool",
+        "url": "https://github.com/kriskbx"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/pwalczyszyn/grunt-slack-hook.git"
+        "url": "https://github.com/kriskbx/grunt-slack-webhook.git"
     },
     "bugs": {
-        "url": "https://github.com/pwalczyszyn/grunt-slack-hook/issues"
+        "url": "https://github.com/kriskbx/grunt-slack-webhook/issues"
     },
     "licenses": [
         {
             "type": "MIT",
-            "url": "https://github.com/pwalczyszyn/grunt-slack-hook/blob/master/LICENSE-MIT"
+            "url": "https://github.com/kriskbx/grunt-slack-webhook/blob/master/LICENSE-MIT"
     }
     ],
     "main": "Gruntfile.js",
