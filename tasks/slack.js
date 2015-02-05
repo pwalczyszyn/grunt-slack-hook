@@ -4,25 +4,19 @@ var request = require('superagent');
 module.exports = function(grunt) {
 
     grunt.registerMultiTask('slack', 'Push info to slack', function() {
-        var options = this.options(),
-            invalids = [];
-
-        if (!options.channel) {
-            invalids.push('channel');
-        }
-        if (invalids.length > 0) {
-            grunt.log.error('grunt-slack-hook plugin is missing following options:', invalids.join(', '));
-            return false;
-        }
+        var options = this.options();
 
         // We are good to go
         var done = this.async(),
             message = grunt.option('message') || '',
             url = options.endpoint ? options.endpoint : 'https://' + options.domain + '.slack.com/services/hooks/incoming-webhook?token=' + options.token,
             data = {
-                channel: options.channel,
                 text: this.data.text.replace('{{message}}', message)
             };
+
+        if(options.channel){
+            data.channel = options.channel;
+        }
 
         if (options.username) {
             data.username = options.username;
