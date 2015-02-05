@@ -4,25 +4,26 @@ var request = require('superagent');
 module.exports = function(grunt) {
 
     grunt.registerMultiTask('slack', 'Push info to slack', function() {
-        var options = this.options(),
-            invalids = [];
+        var options = this.options();
 
-        if (!options.channel) {
-            invalids.push('channel');
-        }
-        if (invalids.length > 0) {
-            grunt.log.error('grunt-slack-hook plugin is missing following options:', invalids.join(', '));
-            return false;
+        if(options.token || options.domain){
+            grunt.log.warn('Sending Slack web hooks via `token` and `domain` has been deprecated!');
         }
 
-        // We are good to go
+        if(!options.endpoint){
+            grunt.log.error('Slack web hook endpoint must be defined.');
+            return;
+        }
+
         var done = this.async(),
             message = grunt.option('message') || '',
-            url = options.endpoint ? options.endpoint : 'https://' + options.domain + '.slack.com/services/hooks/incoming-webhook?token=' + options.token,
             data = {
-                channel: options.channel,
                 text: this.data.text.replace('{{message}}', message)
             };
+
+        if(options.channel){
+            data.channel = options.channel;
+        }
 
         if (options.username) {
             data.username = options.username;
@@ -34,7 +35,7 @@ module.exports = function(grunt) {
             data.icon_url = options.icon_url;
         }
 
-        request.post(url).type('form').send('payload=' + JSON.stringify(data)).end(function(res) {
+        request.post(options.endpoint).type('form').send('payload=' + JSON.stringify(data)).end(function(res) {
             if (!res.ok) {
                 grunt.log.error('Error sending message to slack: ', res.text);
                 return done(false);
