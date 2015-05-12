@@ -31,7 +31,7 @@ grunt.initConfig({
             username: 'My slave bot', // optional
             icon_url: 'http://vermilion1.github.io/presentations/grunt/images/grunt-logo.png' // if icon_emoji not specified
         },
-        your_raget: {
+        your_target: {
             text: 'A new version of the API (v<%= pkg.version %>) has been deployed @ http://api.rockfox.ovh\n\n— cheerioooo :rocket:' // {{message}} can be replaced with --message='some text' option from command line
         }
     }
