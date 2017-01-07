@@ -1,48 +1,49 @@
 {
-    "name": "grunt-slack-hook",
-    "description": "Grunt plugin that can push messages to slack.com service using web hooks.",
-    "version": "0.0.4",
-    "homepage": "https://github.com/pwalczyszyn/grunt-slack-hook",
-    "author": {
-        "name": "Piotr Walczyszyn",
-        "email": "piotr@outof.me",
-        "url": "http://outof.me"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/pwalczyszyn/grunt-slack-hook.git"
-    },
-    "bugs": {
-        "url": "https://github.com/pwalczyszyn/grunt-slack-hook/issues"
-    },
-    "licenses": [
-        {
-            "type": "MIT",
-            "url": "https://github.com/pwalczyszyn/grunt-slack-hook/blob/master/LICENSE-MIT"
+  "name": "grunt-slack-hook",
+  "description": "Grunt plugin that can push messages to slack.com service using web hooks.",
+  "version": "0.0.4",
+  "homepage": "https://github.com/pwalczyszyn/grunt-slack-hook",
+  "author": {
+    "name": "Piotr Walczyszyn",
+    "email": "piotr@outof.me",
+    "url": "http://outof.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pwalczyszyn/grunt-slack-hook.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pwalczyszyn/grunt-slack-hook/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/pwalczyszyn/grunt-slack-hook/blob/master/LICENSE-MIT"
     }
-    ],
-    "main": "Gruntfile.js",
-    "engines": {
-        "node": ">= 0.8.0"
-    },
-    "scripts": {
-        "test": "grunt test"
-    },
-    "dependencies": {
-        "superagent": "~0.15.7"
-    },
-    "devDependencies": {
-        "grunt-contrib-jshint": "~0.6.0",
-        "grunt-contrib-clean": "~0.4.0",
-        "grunt-contrib-nodeunit": "~0.2.0",
-        "grunt": "~0.4.2"
-    },
-    "peerDependencies": {
-        "grunt": "~0.4.2"
-    },
-    "keywords": [
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "lodash.template": "^4.4.0",
+    "superagent": "~0.15.7"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt": "~0.4.2"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.2"
+  },
+  "keywords": [
     "slack",
     "grunt",
     "web hook"
-    ]
+  ]
 }
