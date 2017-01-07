@@ -1,5 +1,6 @@
 /* jshint node:true */
 var request = require('superagent');
+var template = require('lodash.template');
 
 module.exports = function(grunt) {
 
@@ -15,11 +16,15 @@ module.exports = function(grunt) {
             return;
         }
 
-        var done = this.async(),
-            message = grunt.option('message') || '',
-            data = {
-                text: this.data.text.replace('{{message}}', message)
-            };
+
+        var done = this.async();
+
+        var buildText = template(this.data.text, { interpolate: /{{([\s\S]+?)}}/g });
+
+        grunt.cli.options.message = grunt.option('message') || '';
+        var data = {
+            text: buildText(grunt.cli.options)
+        };
 
         if(options.channel){
             data.channel = options.channel;
