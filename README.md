@@ -50,7 +50,8 @@ grunt.initConfig({
         icon_url: 'https://slack.com/img/icons/app-57.png' // if icon_emoji not specified
     },
     your_target: {
-      text: 'Text you want to push to slack.com {{message}}' // {{message}} can be replaced with --message='some text' option from command line
+      text: 'Text you want to push to slack.com {{message}}', // {{message}} can be replaced with --message='some text' option from command line
+      attachments: [], // @see https://api.slack.com/messaging/composing/layouts#building-attachments
     },
   },
 });
