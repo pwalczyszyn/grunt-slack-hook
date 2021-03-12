@@ -18,7 +18,8 @@ module.exports = function(grunt) {
         var done = this.async(),
             message = grunt.option('message') || '',
             data = {
-                text: this.data.text.replace('{{message}}', message)
+                text: this.data.text.replace('{{message}}', message),
+                attachments: this.data.attachments || [], 
             };
 
         if(options.channel){
